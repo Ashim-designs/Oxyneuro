@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxy Neuro - Artificial Intelligence</title>
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --bg-dark: #050814;
+            --card-bg: #0b1120;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00f2fe;
+            --accent-purple: #a855f7;
+            --accent-blue: #3b82f6;
+            --accent-green: #22c55e;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.5;
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15), transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.15), transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- TYPOGRAPHY & UTILITIES --- */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            margin-top: 60px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .view-all {
+            color: var(--accent-cyan);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .view-all:hover { text-decoration: underline; }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .btn:hover { opacity: 0.9; }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        
+        .btn-outline:hover { border-color: var(--accent-cyan); }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo { font-size: 24px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;}
+        .logo-icon { color: var(--accent-cyan); font-size: 28px;}
+
+        .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500;}
+        .nav-links a:hover { color: var(--accent-cyan); }
+
+        .nav-actions { display: flex; align-items: center; gap: 16px; }
+        .user-avatar { 
+            background: rgba(59, 130, 246, 0.2); 
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-cyan);
+            width: 40px; height: 40px; 
+            border-radius: 50%; 
+            display: flex; justify-content: center; align-items: center; 
+            font-weight: bold; font-size: 14px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 0;
+            gap: 40px;
+        }
+
+        .hero-text { flex: 1; max-width: 500px; }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
+        .hero p { color: var(--text-muted); font-size: 18px; margin-bottom: 32px; line-height: 1.6; }
+        .hero-btns { display: flex; gap: 16px; }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Placeholder for your actual glowing brain image */
+        .brain-placeholder {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            border: 1px dashed var(--accent-cyan);
+            display: flex; justify-content: center; align-items: center;
+            color: var(--accent-cyan);
+            box-shadow: 0 0 80px rgba(0, 242, 254, 0.1);
+        }
+
+        /* --- ROADMAP SECTION --- */
+        .roadmap-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        /* Connecting Line */
+        .roadmap-container::before {
+            content: ''; position: absolute;
+            top: 50%; left: 10%; right: 10%;
+            height: 1px; border-top: 1px dashed var(--border-color);
+            z-index: 0;
+        }
+
+        .roadmap-card { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%;}
+        
+        /* Specific Card Borders */
+        .roadmap-card.beginner { border-color: var(--accent-green); box-shadow: 0 0 20px rgba(34, 197, 94, 0.1); }
+        .roadmap-card.intermediate { border-color: rgba(59, 130, 246, 0.5); }
+        .roadmap-card.advanced { border-color: rgba(168, 85, 247, 0.5); }
+
+        .roadmap-header { display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center;}
+        .step-number { 
+            width: 28px; height: 28px; border-radius: 50%; 
+            display: flex; justify-content: center; align-items: center; font-size: 14px; font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        .beginner .step-number { background: var(--accent-green); color: black; }
+        .intermediate .step-number { background: var(--accent-blue); color: white; }
+        .advanced .step-number { background: var(--accent-purple); color: white; }
+
+        .roadmap-list { list-style: none; flex-grow: 1; }
+        .roadmap-list li { 
+            margin-bottom: 12px; font-size: 14px; color: var(--text-muted);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .beginner .roadmap-list li::before { content: '•'; color: var(--accent-green); font-size: 20px;}
+        .intermediate .roadmap-list li::before { content: '•'; color: var(--accent-blue); font-size: 20px;}
+        .advanced .roadmap-list li::before { content: '•'; color: var(--accent-purple); font-size: 20px;}
+
+        .roadmap-footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 13px; color: var(--text-muted);}
+        
+        .progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-top: 8px;}
+        .progress-fill { width: 25%; height: 100%; background: var(--accent-green); border-radius: 4px;}
+
+        /* --- COURSES SECTION --- */
+        .courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .course-card { padding: 16px; }
+        .course-img { width: 100%; height: 160px; background: rgba(255,255,255,0.02); border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border-color);}
+        .course-card h3 { font-size: 18px; margin-bottom: 8px; }
+        .course-meta { display: flex; justify-content: space-between; color: var(--text-muted); font-size: 13px; margin-bottom: 16px;}
+        .stars { color: #fbbf24; }
+        .course-card .btn { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+        .project-card { 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            padding: 20px 10px; text-align: center; gap: 12px;
+        }
+        .project-icon { font-size: 32px; color: var(--accent-cyan); }
+        .project-card span { font-size: 13px; font-weight: 500; }
+
+        /* --- TOOLS & COMMUNITY --- */
+        .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 60px;}
+        
+        .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .tool-card { display: flex; flex-direction: column; align-items: center; padding: 20px 10px; gap: 12px;}
+        .tool-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.05); display: flex; justify-content: center; align-items: center; font-size: 20px;}
+        .tool-card span { font-size: 12px; color: var(--text-muted); }
+
+        .community-list { display: flex; flex-direction: column; gap: 12px; }
+        .community-item { 
+            display: flex; align-items: center; padding: 16px; 
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 12px;
+            transition: background 0.3s; cursor: pointer;
+        }
+        .community-item:hover { background: rgba(255,255,255,0.05); }
+        .comm-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; justify-content: center; align-items: center; margin-right: 16px; font-size: 20px;}
+        .comm-text h4 { font-size: 15px; margin-bottom: 2px;}
+        .comm-text p { font-size: 13px; color: var(--text-muted);}
+        .comm-arrow { margin-left: auto; color: var(--text-muted); }
+
+        /* --- CTA BANNER --- */
+        .cta-banner {
+            margin-top: 80px; margin-bottom: 40px;
+            background: linear-gradient(90deg, rgba(11, 17, 32, 0.8), rgba(30, 27, 75, 0.8));
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .cta-banner h2 { font-size: 32px; }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 32px 0;
+            display: flex; justify-content: space-between; align-items: center;
+            color: var(--text-muted); font-size: 14px;
+        }
+        .social-links { display: flex; gap: 16px; font-size: 20px;}
+        .social-links a:hover { color: var(--accent-cyan); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <span class="logo-icon">⎔</span> OXY<span class="gradient-text">NEURO</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Community</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <span style="cursor:pointer;">🔍</span>
+            <div class="user-avatar">ON</div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="badge">🤖 Artificial Intelligence</div>
+            <h1>Artificial <br><span class="gradient-text">Intelligence</span></h1>
+            <p>Learn AI, Machine Learning, Deep Learning, Generative AI, and build real-world projects.</p>
+            <div class="hero-btns">
+                <button class="btn">🚀 Start Learning</button>
+                <button class="btn btn-outline">👥 Join Community</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="brain-placeholder">
+                [ Insert glowing brain image here ]
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNING ROADMAP -->
+    <div class="section-header">
+        <div class="section-title">🗺️ Learning Roadmap</div>
+        <a href="#" class="view-all">View Full Roadmap →</a>
+    </div>
+    
+    <div class="roadmap-container">
+        <!-- Beginner Card -->
+        <div class="card roadmap-card beginner">
+            <div class="roadmap-header">
+                <div style="display: flex; align-items: center;">
+                    <div class="step-number">1</div>
+                    <h3>Beginner</h3>
+                </div>
+                <span style="color: var(--accent-green);">🌱</span>
+            </div>
+            <ul class="roadmap-list">
+                <li>What is AI?</li>
+                <li>Python Basics</li>
+                <li>Math for AI</li>
+                <li>NumPy & Pandas</li>
+            </ul>
+            <div class="roadmap-footer">
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Progress</span><span>25%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+        </div>
+
+        <!-- Intermediate Card -->
+        <div class="card roadmap-card intermediate">
+            <div class="roadmap-header">
+                <div style="display: flex; align-items: center;">
+                    <div class="step-number">2</div>
+                    <h3>Intermediate</h3>
+                </div>
+                <span style="color: var(--accent-blue);">📈</span>
+            </div>
+            <ul class="roadmap-list">
+                <li>Machine Learning</li>
+                <li>Scikit-Learn</li>
+                <li>Data Visualization</li>
+                <li>Model Evaluation</li>
+            </ul>
+            <div class="roadmap-footer" style="display: flex; align-items: center; gap: 8px;">
+                <span>🔒</span> Complete Beginner to unlock
+            </div>
+        </div>
+
+        <!-- Advanced Card -->
+        <div class="card roadmap-card advanced">
+            <div class="roadmap-header">
+                <div style="display: flex; align-items: center;">
+                    <div class="step-number">3</div>
+                    <h3>Advanced</h3>
+                </div>
+                <span style="color: var(--accent-purple);">🚀</span>
+            </div>
+            <ul class="roadmap-list">
+                <li>Deep Learning</li>
+                <li>TensorFlow / PyTorch</li>
+                <li>Computer Vision</li>
+                <li>NLP</li>
+                <li>LLMs & Generative AI</li>
+            </ul>
+            <div class="roadmap-footer" style="display: flex; align-items: center; gap: 8px;">
+                <span>🔒</span> Complete Intermediate to unlock
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURED COURSES -->
+    <div class="section-header">
+        <div class="section-title">🎓 Featured Courses</div>
+        <a href="#" class="view-all">View All Courses →</a>
+    </div>
+
+    <div class="courses-grid">
+        <div class="card course-card">
+            <div class="course-img"></div>
+            <h3>Introduction to AI</h3>
+            <div class="course-meta">
+                <span class="stars">★★★★★</span>
+                <span>📄 20 Lessons</span>
+            </div>
+            <button class="btn">Start <span>→</span></button>
+        </div>
+        
+        <div class="card course-card">
+            <div class="course-img"></div>
+            <h3>Machine Learning</h3>
+            <div class="course-meta">
+                <span class="stars">★★★★★</span>
+                <span>📄 35 Lessons</span>
+            </div>
+            <button class="btn">Start <span>→</span></button>
+        </div>
+
+        <div class="card course-card">
+            <div class="course-img"></div>
+            <h3>Generative AI</h3>
+            <div class="course-meta">
+                <span class="stars">★★★★★</span>
+                <span>📄 28 Lessons</span>
+            </div>
+            <button class="btn">Start <span>→</span></button>
+        </div>
+    </div>
+
+    <!-- HANDS-ON PROJECTS -->
+    <div class="section-header">
+        <div class="section-title">📁 Hands-on Projects</div>
+        <a href="#" class="view-all">View All Projects →</a>
+    </div>
+
+    <div class="projects-grid">
+        <div class="card project-card"><div class="project-icon">🤖</div><span>AI Chatbot</span></div>
+        <div class="card project-card"><div class="project-icon">🖼️</div><span>Image Classifier</span></div>
+        <div class="card project-card"><div class="project-icon">👁️</div><span>Face Detection</span></div>
+        <div class="card project-card"><div class="project-icon">📧</div><span>Spam Detector</span></div>
+        <div class="card project-card"><div class="project-icon">📈</div><span>Stock Price Predictor</span></div>
+        <div class="card project-card"><div class="project-icon">🎙️</div><span>Voice Assistant</span></div>
+    </div>
+
+    <!-- TWO COLUMN LAYOUT: TOOLS & COMMUNITY -->
+    <div class="two-col-grid">
+        <!-- AI Tools -->
+        <div>
+            <div class="section-header" style="margin-top: 0;">
+                <div class="section-title">🛠️ AI Tools</div>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="tools-grid">
+                <div class="card tool-card"><div class="tool-icon">💮</div><span>ChatGPT</span></div>
+                <div class="card tool-card"><div class="tool-icon">✨</div><span>Gemini</span></div>
+                <div class="card tool-card"><div class="tool-icon">🌀</div><span>Claude</span></div>
+                <div class="card tool-card"><div class="tool-icon">🐙</div><span>GitHub Copilot</span></div>
+                <div class="card tool-card"><div class="tool-icon">🤗</div><span>Hugging Face</span></div>
+                <div class="card tool-card"><div class="tool-icon">T</div><span>TensorFlow</span></div>
+                <div class="card tool-card"><div class="tool-icon">🔥</div><span>PyTorch</span></div>
+                <div class="card tool-card"><div class="tool-icon" style="color:var(--accent-cyan)">k</div><span>Kaggle</span></div>
+            </div>
+        </div>
+
+        <!-- Community -->
+        <div>
+            <div class="section-header" style="margin-top: 0;">
+                <div class="section-title">👥 Community</div>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="community-list">
+                <div class="community-item">
+                    <div class="comm-icon">🏆</div>
+                    <div class="comm-text">
+                        <h4>Weekly AI Challenges</h4>
+                        <p>Solve, learn and win rewards</p>
+                    </div>
+                    <div class="comm-arrow">›</div>
+                </div>
+                <div class="community-item">
+      </body>
+                </html>
