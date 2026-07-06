@@ -1,1 +1,85 @@
+/* =========================
+   OxyNeuro AI - CSS Part 1
+   ========================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+    --bg:#050814;
+    --card:#0b1120;
+    --card2:#121b2f;
+    --border:rgba(255,255,255,.08);
+    --text:#ffffff;
+    --muted:#9ca3af;
+    --blue:#4f8cff;
+    --cyan:#00d4ff;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    height:100vh;
+    overflow:hidden;
+}
+
+/* Animated Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at top left,#133b8a22,transparent 35%),
+        radial-gradient(circle at bottom right,#00d4ff18,transparent 30%),
+        linear-gradient(180deg,#050814,#081122);
+    z-index:-1;
+}
+
+/* Header */
+
+.header{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    border-bottom:1px solid var(--border);
+    background:rgba(11,17,32,.75);
+    backdrop-filter:blur(16px);
+}
+
+.left,
+.right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.icon-btn,
+.profile{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:12px;
+    background:var(--card);
+    color:#fff;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.icon-btn:hover,
+.profile:hover{
+    background:var(--blue);
+    transform:translateY(-2px);
+}
+
+/* Main Layout */
+
+.container{
+    display:flex;
+    height:calc(100vh - 70px);
+      }
