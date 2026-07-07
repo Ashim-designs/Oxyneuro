@@ -1008,4 +1008,71 @@ body {
     border: 1px solid var(--neon-blue);
     box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
 }
+/* --- OxyNeuro High-Fidelity UI Styling Additions --- */
+
+/* 1. Ambient Background Cosmic Glows (Behind the containers) */
+body {
+    background-color: #02040a;
+    background-image: 
+        radial-gradient(circle at 50% 10%, rgba(157, 78, 221, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 85% 20%, rgba(0, 210, 255, 0.08) 0%, transparent 40%);
+}
+
+/* 2. Glassmorphic Glow Cards (For the AI Models & Quick Tools) */
+.model-item {
+    background: rgba(11, 17, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 18px 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active Model Exact Border Glow matching the blue focus in Image 1 */
+.model-item.active {
+    border: 1px solid #00d2ff;
+    background: rgba(0, 210, 255, 0.05);
+    box-shadow: 
+        0 0 20px rgba(0, 210, 255, 0.15),
+        inset 0 0 12px rgba(0, 210, 255, 0.1);
+}
+
+/* 3. Main Chat Prompt Input Glow Wrapper */
+.input-wrapper {
+    background: #060b16;
+    border: 1px solid rgba(157, 78, 221, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.05);
+    padding: 16px 24px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #00d2ff;
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.15);
+}
+
+/* 4. Upgrade Pro / Level Card Gradient Background */
+.user-profile-box {
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.4) 0%, rgba(76, 29, 149, 0.2) 100%);
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    box-shadow: 0 4px 20px rgba(157, 78, 221, 0.1);
+}
+
+/* 5. Quick Welcome Action Chips Layout */
+.suggest-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 14px 20px;
+    border-radius: 12px;
+}
+.suggest-card:hover {
+    border-color: #9d4edd;
+    background: rgba(157, 78, 221, 0.05);
+    color: white;
+}
+
 
