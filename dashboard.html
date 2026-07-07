@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OxyNeuro AI - Dashboard</title>
+    <!-- Link to your CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Add Google Fonts or Lucide/FontAwesome icons here -->
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <!-- COLUMN 1: LEFT SIDEBAR -->
+        <aside class="sidebar-left">
+            <div class="logo-area">
+                <h2>OXYNEURO <span>AI</span></h2>
+            </div>
+            <button class="btn-new-chat">+ New Chat</button>
+            <nav class="nav-links">
+                <a href="#" class="active">Chat History</a>
+                <a href="#">AI Tools</a>
+                <a href="#">Workspace</a>
+                <a href="#">Settings</a>
+            </nav>
+            <div class="user-profile-card">
+                <p>OxyNeuro User</p>
+                <small>Level 1 • 120 XP</small>
+            </div>
+        </aside>
+
+        <!-- COLUMN 2: MAIN CHAT PANEL -->
+        <main class="chat-main">
+            <header class="chat-header">
+                <h3>OXYNEURO <span>AI</span></h3>
+                <span class="status-online">Online</span>
+            </header>
+            
+            <div class="chat-messages">
+                <!-- Messages will stream here dynamically later -->
+                <div class="welcome-box">
+                    <h1>Hello! I'm OxyNeuro AI ✨</h1>
+                    <p>Your intelligent assistant for learning, building and exploring anything with AI.</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="input-glow-wrapper">
+                    <input type="text" placeholder="Type your message...">
+                    <button class="btn-send">→</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- COLUMN 3: RIGHT UTILITY SIDEBAR -->
+        <aside class="sidebar-right">
+            <div class="section-models">
+                <h4>AI MODELS</h4>
+                <div class="models-grid">
+                    <div class="model-card active">GPT-4o</div>
+                    <div class="model-card">Claude 3</div>
+                    <div class="model-card">Gemini 1.5</div>
+                </div>
+            </div>
+
+            <div class="section-tools">
+                <h4>QUICK TOOLS</h4>
+                <ul>
+                    <li>Image Generator</li>
+                    <li>PDF Summarizer</li>
+                    <li>Code Generator</li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
+
