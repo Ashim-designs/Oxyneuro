@@ -906,7 +906,106 @@ transition:.3s ease;
 }
 
 .messages{
-    padding-bottom:90px;
+    padding-bottom:90px;c
 }
 
 }
+
+/* --- OxyNeuro Dashboard Design System --- */
+:root {
+    --bg-dark: #030712;
+    --panel-dark: #0b111e;
+    --neon-blue: #00d2ff;
+    --neon-purple: #9d4edd;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --neon-gradient: linear-gradient(135deg, #00d2ff, #9d4edd);
+}
+
+/* Base Body Reset for App Interface */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3-Column Core Grid Setup */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 320px; /* Left Sidebar, Chat Panel, Right Sidebar */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Stops ugly outer page scrolling */
+}
+
+/* Individual Column Styling & Scrollers */
+.sidebar-left {
+    background-color: var(--panel-dark);
+    border-right: 1px solid #1f2937;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-main {
+    display: flex;
+    flex-direction: column;
+    background-color: #050b14;
+    position: relative;
+}
+
+.sidebar-right {
+    background-color: var(--panel-dark);
+    border-left: 1px solid #1f2937;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Chat Layout Subsections */
+.chat-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+/* Input Area Fixed at Bottom */
+.chat-input-area {
+    padding: 20px 40px;
+    background-color: #050b14;
+}
+
+.input-glow-wrapper {
+    position: relative;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    background-color: var(--bg-dark);
+    padding: 10px;
+    display: flex;
+}
+
+.input-glow-wrapper input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Quick Glowing Utility UI Example */
+.model-card.active {
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
