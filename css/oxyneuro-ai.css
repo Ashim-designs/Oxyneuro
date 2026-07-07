@@ -870,3 +870,43 @@ backdrop-filter:blur(12px);
 transition:.3s ease;
 
 }
+@media screen and (max-width:768px){
+
+.header{
+    height:60px;
+    padding:0 12px;
+}
+
+.chat-area{
+    padding:15px;
+}
+
+.welcome{
+    margin-top:20px;
+}
+
+.welcome h1{
+    font-size:26px;
+}
+
+.quick-buttons{
+    flex-direction:column;
+}
+
+.quick-buttons button{
+    width:100%;
+}
+
+.chat-input{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:10px;
+}
+
+.messages{
+    padding-bottom:90px;
+}
+
+}
