@@ -1,0 +1,357 @@
+/* =====================================
+   OxyNeuro AI Card - Part 1
+===================================== */
+
+.oxy-ai-section{
+    padding:40px 8% 80px;
+}
+
+.oxy-card{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.3fr 1.3fr;
+    gap:40px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:linear-gradient(145deg,#091120,#11192b);
+
+    border:1px solid rgba(0,212,255,.2);
+
+    box-shadow:
+    0 0 40px rgba(0,212,255,.12),
+    0 0 80px rgba(168,85,247,.08);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.oxy-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,.02),
+    transparent);
+    pointer-events:none;
+}
+
+.new-badge{
+    position:absolute;
+    left:25px;
+    top:20px;
+
+    background:#8b5cf6;
+
+    color:#fff;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    font-size:.8rem;
+
+    font-weight:700;
+}
+
+/* LEFT */
+
+.oxy-left{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.ai-orb{
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle at top,
+    #3ddcff,
+    #15244c 70%);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 0 40px #00d4ff66,
+    inset 0 0 40px #00d4ff33;
+
+    animation:float 4s ease-in-out infinite;
+}
+
+.orb-face{
+    width:120px;
+    height:120px;
+    position:relative;
+}
+
+.eye{
+    width:14px;
+    height:14px;
+    background:#00d4ff;
+    border-radius:50%;
+    position:absolute;
+    top:38px;
+}
+
+.eye.left{
+    left:30px;
+}
+
+.eye.right{
+    right:30px;
+}
+
+.smile{
+    position:absolute;
+    width:45px;
+    height:22px;
+    border-bottom:3px solid #00d4ff;
+    border-radius:0 0 50px 50px;
+    left:37px;
+    top:68px;
+}
+
+/* CENTER */
+
+.oxy-content h2{
+
+    font-size:2.3rem;
+
+    margin-bottom:10px;
+}
+
+.oxy-content h2 span{
+
+    color:#00d4ff;
+}
+
+.oxy-content h3{
+
+    color:#00d4ff;
+
+    margin-bottom:18px;
+}
+
+.oxy-content p{
+
+    color:#c9d2df;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.feature-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+    margin-bottom:30px;
+}
+
+.feature-list div{
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.3s;
+}
+
+.feature-list div:hover{
+
+    border-color:#00d4ff;
+
+    color:#00d4ff;
+}
+
+.oxy-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:center;
+}
+
+.open-btn{
+
+    background:linear-gradient(90deg,#00d4ff,#8b5cf6);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    font-weight:600;
+}
+
+.arrow-btn{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.2);
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+/* =====================================
+   OxyNeuro AI Card - Part 2
+===================================== */
+
+.chat-preview{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+    backdrop-filter:blur(20px);
+}
+
+.chat-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-weight:600;
+}
+
+.online{
+    color:#00ff9d;
+    font-size:.85rem;
+}
+
+.chat-body{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.bot,
+.user{
+    padding:14px 18px;
+    border-radius:16px;
+    line-height:1.6;
+    font-size:.95rem;
+}
+
+.bot{
+    background:#111d33;
+    color:#fff;
+    border-left:3px solid #00d4ff;
+}
+
+.user{
+    background:#8b5cf6;
+    color:#fff;
+    align-self:flex-end;
+}
+
+.chat-input{
+    display:flex;
+    gap:10px;
+    padding:18px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.chat-input input{
+    flex:1;
+    background:#0c1425;
+    border:1px solid rgba(255,255,255,.08);
+    color:white;
+    padding:14px 16px;
+    border-radius:50px;
+    outline:none;
+}
+
+.chat-input button{
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    color:white;
+    font-size:18px;
+    background:linear-gradient(135deg,#00d4ff,#8b5cf6);
+    transition:.3s;
+}
+
+.chat-input button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px rgba(0,212,255,.4);
+}
+
+/* Responsive */
+
+@media (max-width:1000px){
+
+.oxy-card{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.feature-list{
+    grid-template-columns:1fr;
+}
+
+.oxy-buttons{
+    justify-content:center;
+}
+
+.chat-preview{
+    margin-top:20px;
+}
+
+.ai-orb{
+    margin:auto;
+}
+
+}
