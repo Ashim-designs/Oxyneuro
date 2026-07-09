@@ -6,15 +6,6 @@
 <title>Oxy Neuro | Learn • Build • Innovate</title>  
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  
 <style>  
-:root {
-    --bg-primary: #050816;
-    --card-bg: #101426;
-    --cyan-glow: #00d4ff;
-    --purple-glow: #a855f7;
-    --text-muted: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.06);
-}
-
 *{  
 margin:0;  
 padding:0;  
@@ -27,35 +18,37 @@ scroll-behavior:smooth;
 }  
 
 body{  
-background: var(--bg-primary);  
+background:#050816;  
 color:white;  
 overflow-x:hidden;  
-position: relative;
 }  
   
-/* Premium Ambient Glow Meshes */  
-body::before, body::after {  
+/* Background Ambient Glows */  
+body::before{  
 content:"";  
 position:fixed;  
-width:600px;  
-height:600px;  
-border-radius: 50%;
-filter:blur(140px);  
-z-index:-1;  
-opacity: 0.15;
-pointer-events: none;
-}  
-body::before {  
-background: var(--cyan-glow);  
-top:-200px;  
+width:500px;  
+height:500px;  
+background:#00d4ff11;  
+filter:blur(120px);  
+top:-150px;  
 left:-150px;  
-}  
-body::after {  
-background: var(--purple-glow);  
-bottom:-200px;  right:-150px;  
+z-index:-1;  
 }  
   
-/* Header/Navigation */  
+body::after{  
+content:"";  
+position:fixed;  
+width:500px;  
+height:500px;  
+background:#a855f711;  
+filter:blur(120px);  
+bottom:-150px;  
+right:-150px;  
+z-index:-1;  
+}  
+  
+/* Header Navigation */  
 header{  
 padding:20px 8%;  
 display:flex;  
@@ -63,150 +56,136 @@ justify-content:space-between;
 align-items:center;  
 position:sticky;  
 top:0;  
-backdrop-filter:blur(20px);  
--webkit-backdrop-filter:blur(20px);
-background:rgba(5,8,22,.75);  
-border-bottom:1px solid var(--border-color);  
+backdrop-filter:blur(15px);  
+-webkit-backdrop-filter:blur(15px);
+background:rgba(5,8,22,.8);  
+border-bottom:1px solid rgba(255,255,255,.05);  
 z-index:100;  
 }  
   
-.logo-container {  
-font-weight:800; 
-font-size:1.3rem; 
-letter-spacing:1px; 
-color:white;
-cursor: default;
+.logo img{  
+height:50px;  
+display:block;
 }  
-.logo-container span { color: var(--cyan-glow); }  
   
 nav a{  
 text-decoration:none;  
-color:#cbd5e1;  
-margin-left:30px;  
+color:#e2e8f0;  
+margin-left:25px;  
 font-weight:500;  
-transition:.3s ease;  
+transition:.3s;  
 font-size:0.9rem;
 }  
+  
 nav a:hover{  
-color: var(--cyan-glow);  
-text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+color:#00d4ff;  
 }  
   
-/* Hero Block */  
+/* Hero Area */  
 .hero{  
-min-height:95vh;  
+min-height:90vh;  
 display:flex;  
 flex-direction:column;  
 justify-content:center;  
 align-items:center;  
 text-align:center;  
-padding:80px 24px 40px 24px;  
+padding:60px 20px;  
 }  
   
 .badge{  
-padding:8px 22px;  
+padding:8px 20px;  
 border-radius:50px;  
 border:1px solid #3b2d7d;  
 background:rgba(26,22,61,0.6);  
-color:#c084fc;  
+color:#a78bfa;  
 font-weight:600;  
-margin-bottom:30px;  
+margin-bottom:25px;  
 font-size:0.8rem;
 letter-spacing: 0.5px;
-box-shadow: inset 0 0 12px rgba(168,85,247,0.2);
 }  
   
-.fallback-logo {  
-background:#000;  
-border:1px solid rgba(255,255,255,0.08);  
-padding:25px;  
-border-radius:20px;  
+.hero img.main-logo {  
 width:280px;  
-height:135px;  
-display:flex;  
-flex-direction:column;  
-justify-content:center;  
-align-items:center;  
-margin-bottom:35px;  
-box-shadow:0px 0px 50px rgba(0, 212, 255, 0.2);
-}
-.fallback-logo h2 { font-size:1.8rem; font-weight:900; letter-spacing:2px; }
-.fallback-logo h2 span { color: var(--cyan-glow); }
-.fallback-logo p { font-size:6px; text-transform:uppercase; letter-spacing:2px; color:#64748b; margin-top:8px; }
-
+max-width:90%;  
+filter:drop-shadow(0 0 30px rgba(0,212,255,0.4));  
+margin-bottom:25px;  
+}  
+  
 .hero h1{  
-font-size:4rem;  
+font-size:3.5rem;  
 font-weight:800;  
 line-height:1.15;  
-background:linear-gradient(90deg, var(--cyan-glow), var(--purple-glow));  
+background:linear-gradient(90deg,#00d4ff,#a855f7);  
 -webkit-background-clip:text;  
 -webkit-text-fill-color:transparent;  
-letter-spacing: -1px;
-max-width: 900px;
+letter-spacing: -0.5px;
 }  
   
 .hero p.hero-subtitle {  
-margin-top:24px;  
-font-size:1.15rem;  
-color: var(--text-muted);  
-max-width:680px;  
+margin-top:20px;  
+font-size:1.1rem;  
+color:#94a3b8;  
+max-width:650px;  
 line-height:1.6;
 }  
   
-.buttons{ margin-top:35px; }  
+.buttons{  
+margin-top:30px;  
+}  
   
 .btn{  
-padding:14px 32px;  
+padding:12px 28px;  
 border-radius:40px;  
 text-decoration:none;  
 font-weight:600;  
 display:inline-block;  
-margin:10px;  
-transition:.3s cubic-bezier(0.4, 0, 0.2, 1);  
+margin:8px;  
+transition:.3s;  
 font-size:0.9rem;
 }  
   
 .primary{  
-background:linear-gradient(90deg, var(--cyan-glow), var(--purple-glow));  
+background:linear-gradient(90deg,#00d4ff,#a855f7);  
 color:white;  
-box-shadow: 0 4px 25px rgba(168,85,247,0.3);
+box-shadow: 0 4px 20px rgba(168,85,247,0.25);
 }  
+  
 .primary:hover{  
-transform:translateY(-3px);  
-box-shadow: 0 6px 30px rgba(168,85,247,0.45);
+transform:translateY(-2px);  
+opacity:0.95;
 }  
   
 .secondary{  
-border:2px solid rgba(0,212,255,0.4);  
-color: var(--cyan-glow);  
+border:1.5px solid rgba(0,212,255,0.5);  
+color:#00d4ff;  
 }  
+  
 .secondary:hover{  
-background:rgba(0,212,255,0.06);  
-border-color: var(--cyan-glow);
-transform:translateY(-3px);  
+background:rgba(0,212,255,0.05);  
+transform:translateY(-2px);  
 }  
     
-/* Core Interactive Feature Section */  
+/* OxyNeuro AI Interactive Component */  
 .oxy-ai-section {  
-padding:80px 5%;  
+padding:40px 5%;  
 width:100%;  
 display:flex;  
 justify-content:center;  
 }  
   
 .oxyneuro-card {  
-background: var(--card-bg);  
-border:1px solid var(--border-color);  
-border-radius:28px;  
+background:#101426;  
+border:1px solid rgba(255,255,255,.05);  
+border-radius:24px;  
 display:grid;  
 grid-template-columns:1.1fr 1fr;  
-gap:50px;  
-padding:50px;  
-max-width:1000px;  
+gap:40px;  
+padding:40px;  
+max-width:950px;  
 width:100%;  
-box-shadow:0 30px 70px rgba(0,0,0,0.5);  
+box-shadow:0 20px 50px rgba(0,0,0,0.4);  
 transform-style:preserve-3d;  
-transition:transform 0.15s ease-out;  
+transition:transform 0.1s ease-out;  
 }  
   
 .card-left {  
@@ -216,376 +195,313 @@ justify-content:center;
 }  
   
 .badge-new {  
-background:rgba(168,85,247,0.25);  
-color:#d8b4fe;  
-padding:4px 12px;  
-border-radius:6px;  
+background:rgba(168,85,247,0.2);  
+color:#c084fc;  
+padding:3px 10px;  
+border-radius:4px;  
 font-size:0.7rem;  
 font-weight:700;  
 width:fit-content;  
-margin-bottom:20px;  
-letter-spacing:1.5px;  
-border: 1px solid rgba(168,85,247,0.2);
+margin-bottom:15px;  
+letter-spacing:1px;  
 }  
   
-/* Native CSS Custom Cyber Orb Graphics Engine */
-.orb-container { 
-position: relative;
-width: 100%;
-height: 180px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 25px;
-perspective: 1000px;
+.brand-info h2 {  
+font-size:1.8rem;  
+font-weight:700;  
+margin-bottom:4px;  
+display:flex;  
+align-items:center;  
+gap:8px;  
 }  
-.pedestal-ring {
-position: absolute;
-border: 1.5px solid rgba(168, 85, 247, 0.25);
-border-radius: 50%;
-transform: rotateX(75deg);
-animation: ringPulse 3.5s infinite ease-in-out;
-}
-.pedestal-1 { width: 150px; height: 150px; animation-delay: 0s; }
-.pedestal-2 { width: 110px; height: 110px; animation-delay: 0.6s; border-color: rgba(0, 212, 255, 0.3); }
-.pedestal-3 { width: 70px; height: 70px; animation-delay: 1.2s; }
-
-.wireframe-orb {
-position: relative;
-width: 95px;
-height: 95px;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-animation: floatMotion 4s infinite ease-in-out;
-transform-style: preserve-3d;
-}
-.network-line {
-position: absolute;
-width: 100%;
-height: 100%;
-border-radius: 50%;
-border: 1px solid transparent;
-}
-.latitude {
-border-top: 1px solid rgba(0, 212, 255, 0.2);
-border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-transform: scaleY(0.35);
-}
-.line-cyan { border-left: 1.5px solid rgba(0, 212, 255, 0.35); filter: drop-shadow(0 0 4px var(--cyan-glow)); }
-.line-violet { border-left: 1.5px solid rgba(168, 85, 247, 0.35); filter: drop-shadow(0 0 4px var(--purple-glow)); }
-
-.longitude-1 { transform: rotateY(0deg); }
-.longitude-2 { transform: rotateY(36deg); }
-.longitude-3 { transform: rotateY(72deg); }
-.longitude-4 { transform: rotateY(108deg); }
-.longitude-5 { transform: rotateY(144deg); }
-
-.robot-face {
-position: absolute;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 5px;
-z-index: 10;
-}
-.eyes { display: flex; gap: 14px; }
-.eye {
-width: 7px; height: 7px;
-background: var(--cyan-glow);
-border-radius: 50%;
-box-shadow: 0 0 12px var(--cyan-glow);
-animation: digitalBlink 4s infinite;
-}
-.smile {
-width: 18px; height: 7px;
-border-bottom: 2px solid var(--cyan-glow);
-border-radius: 0 0 12px 12px;
-box-shadow: 0 2px 4px rgba(0,212,255,0.3);
-}
-
-@keyframes floatMotion {
-0%, 100% { transform: translateY(0) rotateY(0deg); }
-50% { transform: translateY(-12px) rotateY(10deg); }
-}
-@keyframes ringPulse {
-0%, 100% { transform: rotateX(75deg) scale(0.95); opacity: 0.3; }
-50% { transform: rotateX(75deg) scale(1.1); opacity: 0.75; }
-}
-@keyframes digitalBlink {
-0%, 92%, 100% { transform: scaleY(1); }
-96% { transform: scaleY(0.1); }
-}
-
-.brand-info h2 {
-font-size: 2rem;
-font-weight: 700;
-margin-bottom: 6px;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-.brand-info h3 {
-color: var(--cyan-glow);
-font-size: 0.85rem;
-text-transform: uppercase;
-letter-spacing: 1px;
-margin-bottom: 18px;
-font-weight: 600;
-}
-.brand-info p {
-color: var(--text-muted);
-font-size: 0.9rem;
-line-height: 1.6;
-margin-bottom: 28px;
-}
-.features-grid {
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-bottom:30px;
-}
-.feature-item {
-background:rgba(255,255,255,0.02);
-border:1px solid var(--border-color);
-padding:14px;
-border-radius:12px;
-font-size: 0.8rem;
-color:#e2e8f0;
-display: flex;
-align-items: center;
-gap: 8px;
-}
-.cta-group { display:flex; gap:12px; }
-.btn-primary {
-background:#2563eb;
-color:white;
-padding:14px 24px;
-border-radius:12px;
-text-decoration:none;
-font-size:0.9rem;
-font-weight:700;
-flex:1;
-text-align:center;
-transition:.2s ease;
-box-shadow: 0 4px 15px rgba(37,99,235,0.3);
-}
-.btn-primary:hover { background:#1d4ed8; transform: translateY(-1px); }
-.btn-arrow {
-background:rgba(255,255,255,0.03);
-color:white;
-border:1px solid var(--border-color);
-width:50px;
-height:50px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-transition:.2s ease;
-}
-.btn-arrow:hover { background:rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
   
-/* Right Side Mockup Dynamic Chat Window */  
-.card-right {  
-background:#090a0f;  
+.sparkle { color:#00d4ff; }  
+  
+.brand-info h3 {  
+color:#00d4ff;  
+font-size:0.8rem;  
+text-transform:uppercase;  
+letter-spacing:1px;  
+margin-bottom:15px;  
+font-weight:600;  
+}  
+  
+.brand-info p {  
+color:#94a3b8;  
+font-size:0.85rem;  
+line-height:1.6;  
+margin-bottom:25px;  
+}  
+  
+.features-grid {  
+display:grid;  
+grid-template-columns:repeat(2,1fr);  
+gap:10px;  
+margin-bottom:25px;  
+}  
+  
+.feature-item {  
+background:rgba(255,255,255,0.03);  
 border:1px solid rgba(255,255,255,0.05);  
-border-radius:20px;  
+padding:12px;  
+border-radius:10px;  
+font-size:0.75rem;  
+color:#cbd5e1;  
+}  
+  
+.cta-group {  
+display:flex;  
+gap:10px;  
+}  
+  
+.btn-primary {  
+background:#2563eb;  
+color:white;  
+padding:12px 20px;  
+border-radius:10px;  
+text-decoration:none;  
+font-size:0.85rem;  
+font-weight:700;  
+flex:1;  
+text-align:center;  
+transition:.2s;  
+}  
+  
+.btn-primary:hover { background:#1d4ed8; }  
+  
+.btn-arrow {  
+background:rgba(255,255,255,0.04);  
+color:white;  
+border:1px solid rgba(255,255,255,0.08);  
+width:45px;  
+height:45px;  
+display:flex;  
+align-items:center;  
+justify-content:center;  
+border-radius:10px;  
+text-decoration:none;  
+font-weight:bold;  
+transition:.2s;  
+}  
+  
+.btn-arrow:hover { background:rgba(255,255,255,0.08); }  
+  
+/* Right Side Mockup Chat Container */  
+.card-right {  
+background:#0d0e12;  
+border:1px solid rgba(255,255,255,0.06);  
+border-radius:16px;  
 display:flex;  
 flex-direction:column;  
 overflow:hidden;  
-height:390px;  
-box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
+height:360px;  
 }  
+  
 .chat-header {  
-background:#121520;  
-padding:14px 20px;  
+background:#16181f;  
+padding:12px 16px;  
 display:flex;  
 justify-content:space-between;  
 align-items:center;  
-border-bottom:1px solid var(--border-color);  
+border-bottom:1px solid rgba(255,255,255,0.05);  
 }  
-.chat-user { display:flex; align-items:center; gap:12px; }  
-.avatar-container { position:relative; font-size:1.2rem; }  
-.status-dot {  
-position:absolute; bottom:1px; right:0;  
-width:8px; height:8px; background:#10b981;  
-border-radius:50%; border:2px solid #121520;  
-}  
-.username { display:block; font-weight:600; font-size:0.85rem; color:white; }  
-.status-text { display:block; font-size:0.65rem; color:#10b981; font-weight: 500; }  
-.sparkle-icon { color: var(--cyan-glow); font-size:1rem; }  
   
-.chat-body { flex:1; padding:20px; display:flex; flex-direction:column; gap:16px; overflow-y:auto; }  
-.msg-row { display:flex; gap:12px; align-items:flex-start; font-size:0.85rem; }  
+.chat-user { display:flex; align-items:center; gap:10px; }  
+.avatar-container { position:relative; font-size:1.1rem; }  
+  
+.status-dot {  
+position:absolute; bottom:2px; right:0;  
+width:7px; height:7px; background:#10b981;  
+border-radius:50%; border:1.5px solid #16181f;  
+}  
+  
+.username { display:block; font-weight:600; font-size:0.8rem; color:white; }  
+.status-text { display:block; font-size:0.65rem; color:#10b981; }  
+.sparkle-icon { color:#00d4ff; font-size:0.9rem; }  
+  
+.chat-body { flex:1; padding:16px; display:flex; flex-direction:column; gap:14px; overflow-y:auto; }  
+.msg-row { display:flex; gap:10px; align-items:flex-start; font-size:0.8rem; }  
 .user-msg { justify-content:flex-end; }  
-.msg-avatar { font-size:1.2rem; }  
-.msg-bubble { padding:12px 16px; border-radius:14px; max-width:85%; line-height:1.5; }  
+.msg-avatar { font-size:1.1rem; }  
+.msg-bubble { padding:10px 14px; border-radius:12px; max-width:85%; line-height:1.45; }  
   
 .ai-msg .msg-bubble {   
-background:#121520;   
-border:1px solid rgba(255,255,255,0.03);   
+background:#16181f;   
+border:1px solid rgba(255,255,255,0.04);   
 color:#cbd5e1;   
 border-top-left-radius:0;   
 }  
+  
 .user-msg .msg-bubble {   
 background:#2563eb;   
 color:white;   
 border-top-right-radius:0;   
-box-shadow: 0 4px 12px rgba(37,99,235,0.2);
 }  
+  
 .highlight {  
-display:block; background:rgba(0,212,255,0.08);  
-color: var(--cyan-glow); border:1px solid rgba(0,212,255,0.12);  
-padding:8px 12px; border-radius:8px; margin-top:8px;   
+display:block; background:rgba(0,212,255,0.1);  
+color:#00d4ff; border:1px solid rgba(0,212,255,0.15);  
+padding:6px 10px; border-radius:6px; margin-top:6px;   
 font-family:monospace; font-size:0.75rem;  
 }  
   
 .chat-input-area {  
-background:#121520; padding:14px;  
-display:flex; gap:10px; border-top:1px solid var(--border-color);  
-}  
-.chat-input-area input {  
-flex:1; background:rgba(0,0,0,0.3);  
-border:1px solid rgba(255,255,255,0.05);  
-padding:10px 16px; border-radius:10px;  
-color:#475569; font-size:0.85rem;  
-}  
-.btn-send {  
-background:#2563eb; color:white; border:none;  
-width:36px; height:36px; border-radius:10px;  
-display:flex; align-items:center; justify-content:center; opacity:0.6;  
-cursor: not-allowed;
+background:#16181f; padding:12px;  
+display:flex; gap:8px; border-top:1px solid rgba(255,255,255,0.05);  
 }  
   
-/* High-End Feature Grid Matrix Section */  
+.chat-input-area input {  
+flex:1; background:rgba(0,0,0,0.25);  
+border:1px solid rgba(255,255,255,0.06);  
+padding:8px 14px; border-radius:8px;  
+color:#64748b; font-size:0.8rem;  
+}  
+  
+.btn-send {  
+background:#2563eb; color:white; border:none;  
+width:32px; height:32px; border-radius:8px;  
+display:flex; align-items:center; justify-content:center; opacity:0.8;  
+}  
+  
+/* Orb Component Styling */  
+.orb-container { display:none; }  
+  
+/* Features Section (Centered Vertical Stack matching Reference 1000094340.jpg) */  
 .features{  
-padding:100px 8%;  
-max-width:1200px;  
+padding:80px 20px;  
+max-width:450px;  
 margin:0 auto;  
 }  
+  
 .section-title{  
 text-align:center;  
-font-size:2.5rem;  
-font-weight:800;  
-margin-bottom:50px;  
+font-size:2.2rem;  
+font-weight:700;  
+margin-bottom:40px;  
 letter-spacing:-0.5px;  
 }  
+  
 .features .grid{  
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 20px;
+display:flex;  
+flex-direction:column;  
+gap:16px;  
 }  
+  
 .features .card{  
-background: var(--card-bg);  
-border:1px solid var(--border-color);  
-padding:30px 24px;  
-border-radius:18px;  
+background:#101426;  
+border:1px solid rgba(255,255,255,.05);  
+padding:22px;  
+border-radius:14px;  
 text-align:center;  
-transition:.3s cubic-bezier(0.4, 0, 0.2, 1);  
+transition:.3s;  
 cursor:pointer;  
-display: flex;
-flex-direction: column;
-justify-content: center;
 }  
+  
 .features .card:hover{  
-transform:translateY(-5px);  
-box-shadow:0 15px 35px rgba(0,212,255,0.12);  
-border-color: rgba(0,212,255,0.3);  
+transform:translateY(-2px);  
+box-shadow:0 10px 25px rgba(0,212,255,0.1);  
+border-color:rgba(0,212,255,0.3);  
 }  
+  
 .features .card h3{  
-margin-bottom:10px;  
-font-size:1.15rem;  
+margin-bottom:6px;  
+font-size:1.05rem;  
 font-weight:600;  
 color:white;  
 }  
+  
 .features .card p{  
-font-size:0.85rem;  
-color: var(--text-muted);  
-line-height:1.5;  
+font-size:0.8rem;  
+color:#94a3b8;  
+line-height:1.4;  
 }  
   
-/* About Content Wrap */  
+/* About Segment */  
 .about{  
-padding:90px 10%;  
-text-align:center;  
-border-top:1px solid var(--border-color);  
-}  
-.about p{  
-max-width:700px;  
-margin:auto;  
-font-size:1rem;  
-line-height:1.75;  
-color: var(--text-muted);  
-}  
-  
-/* Action Box */  
-.cta{  
 padding:80px 10%;  
 text-align:center;  
-}  
-.cta-box{  
-padding:60px 40px;  
-border-radius:28px;  
-background: var(--card-bg);  
-border:1px solid var(--border-color);  
-max-width:700px;  
-margin:0 auto;  
-box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}  
-.cta h2{  
-font-size:2.2rem;  
-margin-bottom:15px;  
-font-weight:800;  
-letter-spacing: -0.5px;
+border-top:1px solid rgba(255,255,255,0.05);  
 }  
   
-/* Footer Frame */  
-footer{  
-padding:45px;  
+.about p{  
+max-width:650px;  
+margin:auto;  
+font-size:0.95rem;  
+line-height:1.7;  
+color:#94a3b8;  
+}  
+  
+/* CTA Matrix Box */  
+.cta{  
+padding:60px 10%;  
 text-align:center;  
-color:#475569;  
-font-size:0.85rem;  
-border-top:1px solid var(--border-color);  
-font-weight: 500;
 }  
   
-/* Seamless Media Breakpoints */  
-@media(max-width:950px){  
-header{  
-padding:20px 5%;  
-flex-direction:column;  
-gap:15px;  
+.cta-box{  
+padding:50px 30px;  
+border-radius:24px;  
+background:#101426;  
+border:1px solid rgba(255,255,255,.05);  
+max-width:650px;  
+margin:0 auto;  
 }  
+  
+.cta h2{  
+font-size:2rem;  
+margin-bottom:15px;  
+font-weight:700;  
+}  
+  
+/* Footer Element */  
+footer{  
+padding:40px;  
+text-align:center;  
+color:#64748b;  
+font-size:0.8rem;  
+border-top:1px solid rgba(255,255,255,.05);  
+}  
+  
+/* Responsive Interface Queries */  
+@media(max-width:900px){  
+header{  
+padding:15px 5%;  
+flex-direction:column;  
+gap:12px;  
+}  
+  
 nav{  
 display:flex;  
 flex-wrap:wrap;  
 justify-content:center;  
-gap:5px;  
+gap:10px;  
 }  
+  
 nav a{  
 margin-left:0;  
-padding:6px 12px;  
+padding:4px 10px;  
 font-size:0.85rem;  
 }  
+  
 .hero h1{  
-font-size:2.8rem;  
+font-size:2.4rem;  
 }  
+  
 .hero p.hero-subtitle{  
-font-size:1rem;  
+font-size:0.95rem;  
 }  
+  
 .oxyneuro-card {  
 grid-template-columns:1fr;  
-padding:30px;  
-gap:40px;  
+padding:24px;  
+gap:30px;  
 }  
+  
 .card-right {  
-height:340px;  
+height:320px;  
 }  
+  
 .section-title{  
-font-size:2rem;  
+font-size:1.8rem;  
 }  
 }  
 </style>  
@@ -593,8 +509,8 @@ font-size:2rem;
 <body>  
 
 <header>  
-    <div class="logo-container">  
-        OXY <span>NEURO</span>  
+    <div class="logo">  
+        <span style="font-weight:800; font-size:1.2rem; tracking-wide:1px; color:white;">OXY <span style="color:#00d4ff;">NEURO</span></span>
     </div>  
     <nav>  
         <a href="#home">Home</a>  
@@ -610,9 +526,9 @@ font-size:2rem;
         🚀 Launching Soon  
     </div>  
     
-    <div class="fallback-logo">
-        <h2>OXY <span>NEURO</span></h2>
-        <p>Learn • Build • Innovate • Grow</p>
+    <div style="background:#000; border:1px solid rgba(255,255,255,0.1); padding:25px; border-radius:16px; width:260px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom:25px; box-shadow:0px 0px 40px rgba(0, 212, 255, 0.25);">
+        <span style="font-size:1.6rem; font-weight:900; letter-spacing:2px;">OXY <span style="color:#00d4ff;">NEURO</span></span>
+        <span style="font-size:6px; text-transform:uppercase; letter-spacing:2px; color:#64748b; margin-top:6px;">Learn • Build • Innovate • Grow</span>
     </div>
 
     <h1>Learn • Build • Innovate • Grow</h1>  
@@ -632,30 +548,9 @@ font-size:2rem;
     <div class="oxyneuro-card" id="tilt-card">
         
         <div class="card-left">
+            <span class="badge-new">NEW</span>
             
-            <div class="orb-container">
-                <div class="pedestal-ring pedestal-1"></div>
-                <div class="pedestal-ring pedestal-2"></div>
-                <div class="pedestal-ring pedestal-3"></div>
-                <div class="wireframe-orb">
-                    <div class="network-line latitude"></div>
-                    <div class="network-line line-cyan longitude-1"></div>
-                    <div class="network-line line-violet longitude-2"></div>
-                    <div class="network-line line-cyan longitude-3"></div>
-                    <div class="network-line line-violet longitude-4"></div>
-                    <div class="network-line line-cyan longitude-5"></div>
-                    <div class="robot-face">
-                        <div class="eyes">
-                            <div class="eye"></div>
-                            <div class="eye"></div>
-                        </div>
-                        <div class="smile"></div>
-                    </div>
-                </div>
-            </div>
-
             <div class="brand-info">
-                <span class="badge-new">NEW</span>
                 <h2>OxyNeuro AI <span class="sparkle">✦</span></h2>
                 <h3>Your Intelligent Learning Assistant</h3>
                 <p>
@@ -665,10 +560,10 @@ font-size:2rem;
                 </p>
                 
                 <div class="features-grid">
-                    <div class="feature-item"><span>💻</span> Explain Code</div>
-                    <div class="feature-item"><span>🚀</span> Generate Projects</div>
-                    <div class="feature-item"><span>📚</span> Solve Doubts</div>
-                    <div class="feature-item"><span>🧠</span> Learn AI & ML</div>
+                    <div class="feature-item">💻 Explain Code</div>
+                    <div class="feature-item">🚀 Generate Projects</div>
+                    <div class="feature-item">📚 Solve Doubts</div>
+                    <div class="feature-item">🧠 Learn AI & ML</div>
                 </div>
                 
                 <div class="cta-group">
@@ -769,23 +664,44 @@ font-size:2rem;
         students and developers learn, build projects, explore artificial  
         intelligence and grow together. Our mission is to create a place where  
         innovation meets collaboration.  
-    </p>    
+    </p>  
 </section>  
 
 <section class="cta" id="community">  
-    <div class="cta-box">
-        <h2>Ready to Shape the Future?</h2>
-        <p style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; font-size: 0.95rem;">
-            Join a thriving ecosystem of developers, creators, and innovators. Get early access to tools, exclusive hackathons, and a network of ambitious peers.
-        </p>
-        <a href="#" class="btn primary">Join Our Discord</a>
-    </div>
+    <div class="cta-box">  
+        <h2>Ready to Build the Future?</h2>  
+        <p style="color:#94a3b8; margin-bottom:25px; font-size:0.95rem;">  
+            Become part of the Oxy Neuro journey.  
+        </p>  
+        <a href="#" class="btn primary">Join Oxy Neuro</a>  
+    </div>  
 </section>  
 
 <footer id="contact">  
-    <p>&copy; 2026 Oxy Neuro. All rights reserved. Learn &bull; Build &bull; Innovate &bull; Grow</p>  
-</footer>  
+    © 2026 Oxy Neuro™ | All Rights Reserved 
+</footer>
 
-</body>  
-</html>
+<script>
+const card = document.getElementById("tilt-card");
+if(card && window.innerWidth > 900){
+    card.addEventListener("mousemove",(e)=>{
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rx = (cy - y) / 45;
+        const ry = (x - cx) / 45;
+        
+        card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
     
+    card.addEventListener("mouseleave",()=>{
+        card.style.transform="rotateX(0deg) rotateY(0deg)";
+    });
+}
+</script>
+  
+</body>  
+    </html>
+
