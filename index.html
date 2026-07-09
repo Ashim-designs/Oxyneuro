@@ -1,11 +1,11 @@
-<!DOCTYPE html>  
-<html lang="en">  
+<!DOCTYPE html>  <html lang="en">  
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>Oxy Neuro | Learn • Build • Innovate</title>  
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  
-<style>  
+<link rel="stylesheet" href="css/oxyneuro-ai.css">  
+  <link rel="stylesheet" href="css/ai-card.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  <style>  
 *{  
 margin:0;  
 padding:0;  
@@ -23,13 +23,13 @@ color:white;
 overflow-x:hidden;  
 }  
   
-/* Background Ambient Glows */  
+/* Background Glow */  
 body::before{  
 content:"";  
 position:fixed;  
 width:500px;  
 height:500px;  
-background:#00d4ff11;  
+background:#00d4ff22;  
 filter:blur(120px);  
 top:-150px;  
 left:-150px;  
@@ -41,14 +41,14 @@ content:"";
 position:fixed;  
 width:500px;  
 height:500px;  
-background:#a855f711;  
+background:#a855f722;  
 filter:blur(120px);  
 bottom:-150px;  
 right:-150px;  
 z-index:-1;  
 }  
   
-/* Header Navigation */  
+/* Header */  
 header{  
 padding:20px 8%;  
 display:flex;  
@@ -57,651 +57,518 @@ align-items:center;
 position:sticky;  
 top:0;  
 backdrop-filter:blur(15px);  
--webkit-backdrop-filter:blur(15px);
 background:rgba(5,8,22,.8);  
-border-bottom:1px solid rgba(255,255,255,.05);  
+border-bottom:1px solid rgba(255,255,255,.08);  
 z-index:100;  
 }  
   
 .logo img{  
-height:50px;  
-display:block;
+height:60px;  
 }  
   
 nav a{  
 text-decoration:none;  
-color:#e2e8f0;  
+color:white;  
 margin-left:25px;  
 font-weight:500;  
 transition:.3s;  
-font-size:0.9rem;
 }  
   
 nav a:hover{  
 color:#00d4ff;  
 }  
   
-/* Hero Area */  
+/* Hero */  
 .hero{  
-min-height:90vh;  
+min-height:100vh;  
 display:flex;  
 flex-direction:column;  
 justify-content:center;  
 align-items:center;  
 text-align:center;  
-padding:60px 20px;  
+padding:80px 20px 40px 20px;  
 }  
   
 .badge{  
-padding:8px 20px;  
+padding:12px 25px;  
 border-radius:50px;  
-border:1px solid #3b2d7d;  
-background:rgba(26,22,61,0.6);  
-color:#a78bfa;  
+border:1px solid #a855f7;  
+background:rgba(168,85,247,.12);  
+color:#d8b4fe;  
 font-weight:600;  
 margin-bottom:25px;  
-font-size:0.8rem;
-letter-spacing: 0.5px;
 }  
   
 .hero img.main-logo {  
-width:280px;  
+width:320px;  
 max-width:90%;  
-filter:drop-shadow(0 0 30px rgba(0,212,255,0.4));  
-margin-bottom:25px;  
+filter:drop-shadow(0 0 35px #00d4ff);  
+margin-bottom:20px;  
 }  
   
 .hero h1{  
-font-size:3.5rem;  
+font-size:4rem;  
 font-weight:800;  
-line-height:1.15;  
+line-height:1.1;  
 background:linear-gradient(90deg,#00d4ff,#a855f7);  
 -webkit-background-clip:text;  
 -webkit-text-fill-color:transparent;  
-letter-spacing: -0.5px;
 }  
   
 .hero p.hero-subtitle {  
 margin-top:20px;  
-font-size:1.1rem;  
-color:#94a3b8;  
-max-width:650px;  
-line-height:1.6;
+font-size:1.2rem;  
+color:#c6c6c6;  
+max-width:700px;  
+margin-bottom: 20px;  
 }  
   
 .buttons{  
-margin-top:30px;  
+margin-top:20px;  
+margin-bottom: 50px;  
 }  
   
 .btn{  
-padding:12px 28px;  
+padding:14px 30px;  
 border-radius:40px;  
 text-decoration:none;  
 font-weight:600;  
 display:inline-block;  
-margin:8px;  
+margin:10px;  
 transition:.3s;  
-font-size:0.9rem;
 }  
   
 .primary{  
 background:linear-gradient(90deg,#00d4ff,#a855f7);  
 color:white;  
-box-shadow: 0 4px 20px rgba(168,85,247,0.25);
 }  
   
 .primary:hover{  
-transform:translateY(-2px);  
-opacity:0.95;
+transform:translateY(-3px);  
 }  
   
 .secondary{  
-border:1.5px solid rgba(0,212,255,0.5);  
+border:2px solid #00d4ff;  
 color:#00d4ff;  
 }  
   
 .secondary:hover{  
-background:rgba(0,212,255,0.05);  
-transform:translateY(-2px);  
+background:#00d4ff;  
+color:#050816;  
 }  
     
-/* OxyNeuro AI Interactive Component */  
-.oxy-ai-section {  
-padding:40px 5%;  
-width:100%;  
-display:flex;  
-justify-content:center;  
-}  
   
-.oxyneuro-card {  
-background:#101426;  
-border:1px solid rgba(255,255,255,.05);  
-border-radius:24px;  
-display:grid;  
-grid-template-columns:1.1fr 1fr;  
-gap:40px;  
-padding:40px;  
-max-width:950px;  
-width:100%;  
-box-shadow:0 20px 50px rgba(0,0,0,0.4);  
-transform-style:preserve-3d;  
-transition:transform 0.1s ease-out;  
-}  
-  
-.card-left {  
-display:flex;  
-flex-direction:column;  
-justify-content:center;  
-}  
-  
-.badge-new {  
-background:rgba(168,85,247,0.2);  
-color:#c084fc;  
-padding:3px 10px;  
-border-radius:4px;  
-font-size:0.7rem;  
-font-weight:700;  
-width:fit-content;  
-margin-bottom:15px;  
-letter-spacing:1px;  
-}  
-  
-.brand-info h2 {  
-font-size:1.8rem;  
-font-weight:700;  
-margin-bottom:4px;  
-display:flex;  
-align-items:center;  
-gap:8px;  
-}  
-  
-.sparkle { color:#00d4ff; }  
-  
-.brand-info h3 {  
-color:#00d4ff;  
-font-size:0.8rem;  
-text-transform:uppercase;  
-letter-spacing:1px;  
-margin-bottom:15px;  
-font-weight:600;  
-}  
-  
-.brand-info p {  
-color:#94a3b8;  
-font-size:0.85rem;  
-line-height:1.6;  
-margin-bottom:25px;  
-}  
-  
-.features-grid {  
-display:grid;  
-grid-template-columns:repeat(2,1fr);  
-gap:10px;  
-margin-bottom:25px;  
-}  
-  
-.feature-item {  
-background:rgba(255,255,255,0.03);  
-border:1px solid rgba(255,255,255,0.05);  
-padding:12px;  
-border-radius:10px;  
-font-size:0.75rem;  
-color:#cbd5e1;  
-}  
-  
-.cta-group {  
-display:flex;  
-gap:10px;  
-}  
-  
-.btn-primary {  
-background:#2563eb;  
-color:white;  
-padding:12px 20px;  
-border-radius:10px;  
-text-decoration:none;  
-font-size:0.85rem;  
-font-weight:700;  
-flex:1;  
-text-align:center;  
-transition:.2s;  
-}  
-  
-.btn-primary:hover { background:#1d4ed8; }  
-  
-.btn-arrow {  
-background:rgba(255,255,255,0.04);  
-color:white;  
-border:1px solid rgba(255,255,255,0.08);  
-width:45px;  
-height:45px;  
-display:flex;  
-align-items:center;  
-justify-content:center;  
-border-radius:10px;  
-text-decoration:none;  
-font-weight:bold;  
-transition:.2s;  
-}  
-  
-.btn-arrow:hover { background:rgba(255,255,255,0.08); }  
-  
-/* Right Side Mockup Chat Container */  
-.card-right {  
-background:#0d0e12;  
-border:1px solid rgba(255,255,255,0.06);  
-border-radius:16px;  
-display:flex;  
-flex-direction:column;  
-overflow:hidden;  
-height:360px;  
-}  
-  
-.chat-header {  
-background:#16181f;  
-padding:12px 16px;  
-display:flex;  
-justify-content:space-between;  
-align-items:center;  
-border-bottom:1px solid rgba(255,255,255,0.05);  
-}  
-  
-.chat-user { display:flex; align-items:center; gap:10px; }  
-.avatar-container { position:relative; font-size:1.1rem; }  
-  
-.status-dot {  
-position:absolute; bottom:2px; right:0;  
-width:7px; height:7px; background:#10b981;  
-border-radius:50%; border:1.5px solid #16181f;  
-}  
-  
-.username { display:block; font-weight:600; font-size:0.8rem; color:white; }  
-.status-text { display:block; font-size:0.65rem; color:#10b981; }  
-.sparkle-icon { color:#00d4ff; font-size:0.9rem; }  
-  
-.chat-body { flex:1; padding:16px; display:flex; flex-direction:column; gap:14px; overflow-y:auto; }  
-.msg-row { display:flex; gap:10px; align-items:flex-start; font-size:0.8rem; }  
-.user-msg { justify-content:flex-end; }  
-.msg-avatar { font-size:1.1rem; }  
-.msg-bubble { padding:10px 14px; border-radius:12px; max-width:85%; line-height:1.45; }  
-  
-.ai-msg .msg-bubble {   
-background:#16181f;   
-border:1px solid rgba(255,255,255,0.04);   
-color:#cbd5e1;   
-border-top-left-radius:0;   
-}  
-  
-.user-msg .msg-bubble {   
-background:#2563eb;   
-color:white;   
-border-top-right-radius:0;   
-}  
-  
-.highlight {  
-display:block; background:rgba(0,212,255,0.1);  
-color:#00d4ff; border:1px solid rgba(0,212,255,0.15);  
-padding:6px 10px; border-radius:6px; margin-top:6px;   
-font-family:monospace; font-size:0.75rem;  
-}  
-  
-.chat-input-area {  
-background:#16181f; padding:12px;  
-display:flex; gap:8px; border-top:1px solid rgba(255,255,255,0.05);  
-}  
-  
-.chat-input-area input {  
-flex:1; background:rgba(0,0,0,0.25);  
-border:1px solid rgba(255,255,255,0.06);  
-padding:8px 14px; border-radius:8px;  
-color:#64748b; font-size:0.8rem;  
-}  
-  
-.btn-send {  
-background:#2563eb; color:white; border:none;  
-width:32px; height:32px; border-radius:8px;  
-display:flex; align-items:center; justify-content:center; opacity:0.8;  
-}  
-  
-/* Orb Component Styling */  
-.orb-container { display:none; }  
-  
-/* Features Section (Centered Vertical Stack matching Reference 1000094340.jpg) */  
+/* Features Block */  
 .features{  
-padding:80px 20px;  
-max-width:450px;  
-margin:0 auto;  
+padding:100px 10%;  
 }  
   
 .section-title{  
 text-align:center;  
-font-size:2.2rem;  
-font-weight:700;  
-margin-bottom:40px;  
-letter-spacing:-0.5px;  
+font-size:2.8rem;  
+margin-bottom:60px;  
 }  
   
-.features .grid{  
-display:flex;  
-flex-direction:column;  
-gap:16px;  
+.grid{  
+display:grid;  
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));  
+gap:25px;  
 }  
   
-.features .card{  
-background:#101426;  
-border:1px solid rgba(255,255,255,.05);  
-padding:22px;  
-border-radius:14px;  
-text-align:center;  
+.card{  
+background:rgba(255,255,255,.05);  
+border:1px solid rgba(255,255,255,.08);  
+padding:30px;  
+border-radius:20px;  
 transition:.3s;  
-cursor:pointer;  
 }  
   
-.features .card:hover{  
-transform:translateY(-2px);  
-box-shadow:0 10px 25px rgba(0,212,255,0.1);  
-border-color:rgba(0,212,255,0.3);  
+.card:hover{  
+transform:translateY(-10px);  
+box-shadow:0 0 25px rgba(0,212,255,.25);  
+border-color:#00d4ff;  
 }  
   
-.features .card h3{  
-margin-bottom:6px;  
-font-size:1.05rem;  
-font-weight:600;  
-color:white;  
+.card h3{  
+margin-bottom:12px;  
+font-size:1.3rem;  
 }  
   
-.features .card p{  
-font-size:0.8rem;  
-color:#94a3b8;  
-line-height:1.4;  
-}  
-  
-/* About Segment */  
+/* About */  
 .about{  
-padding:80px 10%;  
+padding:100px 10%;  
 text-align:center;  
-border-top:1px solid rgba(255,255,255,0.05);  
 }  
   
 .about p{  
-max-width:650px;  
+max-width:800px;  
 margin:auto;  
-font-size:0.95rem;  
-line-height:1.7;  
-color:#94a3b8;  
+font-size:1.1rem;  
+line-height:1.8;  
+color:#c5c5c5;  
 }  
   
-/* CTA Matrix Box */  
+/* CTA */  
 .cta{  
-padding:60px 10%;  
+padding:100px 10%;  
 text-align:center;  
 }  
   
 .cta-box{  
-padding:50px 30px;  
-border-radius:24px;  
-background:#101426;  
-border:1px solid rgba(255,255,255,.05);  
-max-width:650px;  
-margin:0 auto;  
+padding:50px;  
+border-radius:30px;  
+background:rgba(255,255,255,.05);  
+border:1px solid rgba(255,255,255,.08);  
 }  
   
 .cta h2{  
-font-size:2rem;  
-margin-bottom:15px;  
-font-weight:700;  
+font-size:2.5rem;  
+margin-bottom:20px;  
 }  
   
-/* Footer Element */  
+/* Footer */  
 footer{  
 padding:40px;  
 text-align:center;  
-color:#64748b;  
-font-size:0.8rem;  
-border-top:1px solid rgba(255,255,255,.05);  
+color:#888;  
+border-top:1px solid rgba(255,255,255,.08);  
 }  
   
-/* Responsive Interface Queries */  
-@media(max-width:900px){  
+/* Mobile Media Queries */  
+@media(max-width:768px){  
 header{  
-padding:15px 5%;  
 flex-direction:column;  
-gap:12px;  
+gap:15px;  
 }  
   
 nav{  
 display:flex;  
 flex-wrap:wrap;  
 justify-content:center;  
-gap:10px;  
 }  
   
 nav a{  
-margin-left:0;  
-padding:4px 10px;  
-font-size:0.85rem;  
+margin:8px;  
 }  
   
 .hero h1{  
-font-size:2.4rem;  
+font-size:2.6rem;  
 }  
   
 .hero p.hero-subtitle{  
-font-size:0.95rem;  
+font-size:1rem;  
 }  
   
-.oxyneuro-card {  
-grid-template-columns:1fr;  
-padding:24px;  
-gap:30px;  
+.hero img.main-logo{  
+width:220px;  
 }  
   
-.card-right {  
-height:320px;  
+.oxy-card {  
+flex-direction: column;  
+text-align: center;  
+padding: 40px 20px 30px 20px;  
+}  
+  
+.oxy-left img {  
+margin-right: 0;  
+margin-bottom: 20px;  
+}  
+  
+.title-row {  
+justify-content: center;  
+}  
+  
+.feature-tags {  
+justify-content: center;  
+}  
+  
+.card-arrow {  
+margin-left: 0;  
+margin-top: 20px;  
 }  
   
 .section-title{  
-font-size:1.8rem;  
+font-size:2rem;  
+}  
+  
+.cta h2{  
+font-size:2rem;  
 }  
 }  
-</style>  
-</head>  
-<body>  
+</style>  </head>  
+<body>  <header>  
+<div class="logo">  
+<img src="logo.png" alt="Oxy Neuro">  
+</div>  
+<nav>  
+<a href="#home">Home</a>  
+<a href="#features">Features</a>  
+<a href="#about">About</a>  
+<a href="#community">Community</a>  
+<a href="#contact">Contact</a>  
+</nav>  
+</header>  <section class="hero" id="home">  
+<div class="badge">  
+🚀 Launching Soon  
+</div>  <img src="logo.png" alt="Oxy Neuro Logo" class="main-logo">  <h1>Learn • Build • Innovate • Grow</h1>  <p class="hero-subtitle">  
+Join a next-generation coding and AI community where students,  
+developers, creators and future founders learn together.  
+</p>  <div class="buttons">  
+<a href="#" class="btn primary">Join Community</a>  
+<a href="dashboard.html" class="btn secondary">Start Learning</a>  
+</div>  
 
-<header>  
-    <div class="logo">  
-        <span style="font-weight:800; font-size:1.2rem; tracking-wide:1px; color:white;">OXY <span style="color:#00d4ff;">NEURO</span></span>
-    </div>  
-    <nav>  
-        <a href="#home">Home</a>  
-        <a href="#features">Features</a>  
-        <a href="#about">About</a>  
-        <a href="#community">Community</a>  
-        <a href="#contact">Contact</a>  
-    </nav>  
-</header>  
+<!-- ========================= -->
+<!-- OxyNeuro AI -->
+<!-- ========================= -->
 
-<section class="hero" id="home">  
-    <div class="badge">  
-        🚀 Launching Soon  
-    </div>  
-    
-    <div style="background:#000; border:1px solid rgba(255,255,255,0.1); padding:25px; border-radius:16px; width:260px; height:130px; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom:25px; box-shadow:0px 0px 40px rgba(0, 212, 255, 0.25);">
-        <span style="font-size:1.6rem; font-weight:900; letter-spacing:2px;">OXY <span style="color:#00d4ff;">NEURO</span></span>
-        <span style="font-size:6px; text-transform:uppercase; letter-spacing:2px; color:#64748b; margin-top:6px;">Learn • Build • Innovate • Grow</span>
+  <section class="oxy-ai-section">
+
+<div class="oxyneuro-card" id="tilt-card">
+
+    <!-- LEFT SIDE -->
+
+    <div class="card-left">
+
+        <span class="badge-new">NEW</span>
+
+        <div class="orb-container">
+
+            <div class="pedestal-ring pedestal-1"></div>
+            <div class="pedestal-ring pedestal-2"></div>
+            <div class="pedestal-ring pedestal-3"></div>
+
+            <div class="wireframe-orb">
+
+                <div class="network-line latitude"></div>
+
+                <div class="network-line line-cyan longitude-1"></div>
+
+                <div class="network-line line-violet longitude-2"></div>
+
+                <div class="network-line line-cyan longitude-3"></div>
+
+                <div class="network-line line-violet longitude-4"></div>
+
+                <div class="network-line line-cyan longitude-5"></div>
+
+                <div class="robot-face">
+
+                    <div class="eyes">
+
+                        <div class="eye"></div>
+
+                        <div class="eye"></div>
+
+                    </div>
+
+                    <div class="smile"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="brand-info">
+
+            <h2>
+                OxyNeuro AI
+                <span class="sparkle">✦</span>
+            </h2>
+
+            <h3>Your Intelligent Learning Assistant</h3>
+
+            <p>
+                Ask anything, get instant help, generate projects,
+                debug code, learn AI, solve coding doubts,
+                and build faster with OxyNeuro AI.
+            </p>
+
+            <div class="features-grid">
+
+                <div class="feature-item">
+                    💻 Explain Code
+                </div>
+
+                <div class="feature-item">
+                    🚀 Generate Projects
+                </div>
+
+                <div class="feature-item">
+                    📚 Solve Doubts
+                </div>
+
+                <div class="feature-item">
+                    🧠 Learn AI & ML
+                </div>
+
+            </div>
+
+            <div class="cta-group">
+
+                <a href="dashboard.html" class="btn-primary">
+                    🚀 Open OxyNeuro AI
+                </a>
+
+                <a href="artificial-intelligence.html" class="btn-arrow">
+                    ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+      <!-- RIGHT SIDE -->
+
+    <div class="card-right">
+
+        <div class="chat-header">
+
+            <div class="chat-user">
+
+                <div class="avatar-container">
+                    <span class="avatar">🤖</span>
+                    <span class="status-dot"></span>
+                </div>
+
+                <div>
+                    <span class="username">OxyNeuro AI</span>
+                    <span class="status-text">Online</span>
+                </div>
+
+            </div>
+
+            <span class="sparkle-icon">✦</span>
+
+        </div>
+
+        <div class="chat-body">
+
+            <div class="msg-row ai-msg">
+                <span class="msg-avatar">🤖</span>
+                <div class="msg-bubble">
+                    👋 Hello! I'm OxyNeuro AI. How can I help you today?
+                </div>
+            </div>
+
+            <div class="msg-row user-msg">
+                <div class="msg-bubble">
+                    Explain recursion in simple terms.
+                </div>
+            </div>
+
+            <div class="msg-row ai-msg">
+                <span class="msg-avatar">🤖</span>
+                <div class="msg-bubble">
+                    Sure! Recursion is when a function calls itself to solve a
+                    smaller version of the same problem.
+                    <br><br>
+
+                    <span class="highlight">1. Base Case</span>
+                    <span class="highlight">2. Recursive Case</span>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chat-input-area">
+
+            <input
+                type="text"
+                placeholder="Ask anything..."
+                disabled>
+
+            <button class="btn-send">➜</button>
+
+        </div>
+
     </div>
 
-    <h1>Learn • Build • Innovate • Grow</h1>  
-    
-    <p class="hero-subtitle">  
-        Join a next-generation coding and AI community where students,  
-        developers, creators and future founders learn together.  
-    </p>  
-    
-    <div class="buttons">  
-        <a href="#" class="btn primary">Join Community</a>  
-        <a href="#" class="btn secondary">Start Learning</a>  
+</div>
+
+  </section>
+</div>
+  <section class="features" id="features">  
+<h2 class="section-title">What We Offer</h2>  
+<div class="grid">  
+<div class="card">  
+<h3>💻 Coding</h3>  
+<p>Programming from beginner to advanced.</p>  
+</div>  
+<a href="artificial-intelligence.html" style="text-decoration:none;color:inherit;">  
+    <div class="card">  
+        <h3>🤖 Artificial Intelligence</h3>  
+        <p>Learn AI, ML and modern tools.</p>  
     </div>  
-</section>  
-
-<section class="oxy-ai-section">
-    <div class="oxyneuro-card" id="tilt-card">
-        
-        <div class="card-left">
-            <span class="badge-new">NEW</span>
-            
-            <div class="brand-info">
-                <h2>OxyNeuro AI <span class="sparkle">✦</span></h2>
-                <h3>Your Intelligent Learning Assistant</h3>
-                <p>
-                    Ask anything, get instant help, generate projects,
-                    debug code, learn AI, solve coding doubts,
-                    and build faster with OxyNeuro AI.
-                </p>
-                
-                <div class="features-grid">
-                    <div class="feature-item">💻 Explain Code</div>
-                    <div class="feature-item">🚀 Generate Projects</div>
-                    <div class="feature-item">📚 Solve Doubts</div>
-                    <div class="feature-item">🧠 Learn AI & ML</div>
-                </div>
-                
-                <div class="cta-group">
-                    <a href="#" class="btn-primary">🚀 Open OxyNeuro AI</a>
-                    <a href="#" class="btn-arrow">↗</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card-right">
-            <div class="chat-header">
-                <div class="chat-user">
-                    <div class="avatar-container">
-                        <span class="avatar">🤖</span>
-                        <span class="status-dot"></span>
-                    </div>
-                    <div>
-                        <span class="username">OxyNeuro AI</span>
-                        <span class="status-text">Online</span>
-                    </div>
-                </div>
-                <span class="sparkle-icon">✦</span>
-            </div>
-            
-            <div class="chat-body">
-                <div class="msg-row ai-msg">
-                    <span class="msg-avatar">🤖</span>
-                    <div class="msg-bubble">
-                        👋 Hello! I'm OxyNeuro AI. How can I help you today?
-                    </div>
-                </div>
-                <div class="msg-row user-msg">
-                    <div class="msg-bubble">
-                        Explain recursion in simple terms.
-                    </div>
-                </div>
-                <div class="msg-row ai-msg">
-                    <span class="msg-avatar">🤖</span>
-                    <div class="msg-bubble">
-                        Sure! Recursion is when a function calls itself to solve a
-                        smaller version of the same problem.
-                        <span class="highlight">1. Base Case</span>
-                        <span class="highlight">2. Recursive Case</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="chat-input-area">
-                <input type="text" placeholder="Ask anything..." disabled>
-                <button class="btn-send">➜</button>
-            </div>
-        </div>
-        
-    </div>
-</section>
-
-<section class="features" id="features">  
-    <h2 class="section-title">What We Offer</h2>  
-    <div class="grid">  
-        
-        <div class="card">  
-            <h3>💻 Coding</h3>  
-            <p>Programming from beginner to advanced.</p>  
-        </div>  
-        
-        <div class="card">  
-            <h3>🤖 Artificial Intelligence</h3>  
-            <p>Learn AI, ML and modern tools.</p>  
-        </div>  
-        
-        <div class="card">  
-            <h3>📂 Real Projects</h3>  
-            <p>Build portfolio-worthy applications.</p>  
-        </div>  
-        
-        <div class="card">  
-            <h3>🚀 Startups</h3>  
-            <p>Turn ideas into products and businesses.</p>  
-        </div>  
-        
-        <div class="card">  
-            <h3>👥 Community</h3>  
-            <p>Network with ambitious learners.</p>  
-        </div>  
-        
-        <div class="card">  
-            <h3>🏆 Challenges</h3>  
-            <p>Hackathons, contests and competitions.</p>  
-        </div>  
-        
-    </div>  
-</section>  
-
-<section class="about" id="about">  
-    <h2 class="section-title">About Oxy Neuro</h2>  
-    <p>  
-        Oxy Neuro is a modern coding and AI community focused on helping  
-        students and developers learn, build projects, explore artificial  
-        intelligence and grow together. Our mission is to create a place where  
-        innovation meets collaboration.  
-    </p>  
-</section>  
-
-<section class="cta" id="community">  
-    <div class="cta-box">  
-        <h2>Ready to Build the Future?</h2>  
-        <p style="color:#94a3b8; margin-bottom:25px; font-size:0.95rem;">  
-            Become part of the Oxy Neuro journey.  
-        </p>  
-        <a href="#" class="btn primary">Join Oxy Neuro</a>  
-    </div>  
-</section>  
-
-<footer id="contact">  
-    © 2026 Oxy Neuro™ | All Rights Reserved 
-</footer>
-
-<script>
+</a>  
+<div class="card">  
+<h3>📂 Real Projects</h3>  
+<p>Build portfolio-worthy applications.</p>  
+</div>  
+<div class="card">  
+<h3>🚀 Startups</h3>  
+<p>Turn ideas into products and businesses.</p>  
+</div>  
+<div class="card">  
+<h3>👥 Community</h3>  
+<p>Network with ambitious learners.</p>  
+</div>  
+<div class="card">  
+<h3>🏆 Challenges</h3>  
+<p>Hackathons, contests and competitions.</p>  
+</div>  
+</div>  
+</section>  <section class="about" id="about">  
+<h2 class="section-title">About Oxy Neuro</h2>  
+<p>  
+Oxy Neuro is a modern coding and AI community focused on helping  
+students and developers learn, build projects, explore artificial  
+intelligence and grow together. Our mission is to create a place where  
+innovation meets collaboration.  
+</p>  
+</section>  <section class="cta" id="community">  
+<div class="cta-box">  
+<h2>Ready to Build the Future?</h2>  
+<p style="color:#c6c6c6;margin-bottom:25px;">  
+Become part of the Oxy Neuro journey.  
+</p>  
+<a href="#" class="btn primary">  
+Join Oxy Neuro  
+</a>  
+</div>  
+</section>  <footer id="contact">  
+© 2026 Oxy Neuro™ | All Rights Reserved 
+  <script>
 const card = document.getElementById("tilt-card");
+
 if(card && window.innerWidth > 900){
-    card.addEventListener("mousemove",(e)=>{
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const cx = rect.width / 2;
-        const cy = rect.height / 2;
-        const rx = (cy - y) / 45;
-        const ry = (x - cx) / 45;
-        
-        card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-    });
-    
-    card.addEventListener("mouseleave",()=>{
-        card.style.transform="rotateX(0deg) rotateY(0deg)";
-    });
+
+card.addEventListener("mousemove",(e)=>{
+const rect = card.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+const cx = rect.width / 2;
+const cy = rect.height / 2;
+
+const rx = (cy - y) / 35;
+const ry = (x - cx) / 35;
+
+card.style.transform =
+`rotateX(${rx}deg) rotateY(${ry}deg)`;
+});
+
+card.addEventListener("mouseleave",()=>{
+card.style.transform="rotateX(0deg) rotateY(0deg)";
+});
+
 }
 </script>
   
 </body>  
-  </html>
+              </html>
   
