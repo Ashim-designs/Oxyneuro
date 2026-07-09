@@ -17,40 +17,6 @@ html{
 scroll-behavior:smooth;  
 }  
 
-  <script>
-const card=document.getElementById("tilt-card");
-
-if(card&&window.innerWidth>900){
-
-card.addEventListener("mousemove",(e)=>{
-
-const rect=card.getBoundingClientRect();
-
-const x=e.clientX-rect.left;
-
-const y=e.clientY-rect.top;
-
-const cx=rect.width/2;
-
-const cy=rect.height/2;
-
-const rx=(cy-y)/35;
-
-const ry=(x-cx)/35;
-
-card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="rotateX(0deg) rotateY(0deg)";
-
-});
-
-}
-</script>
-  
 body{  
 background:#050816;  
 color:white;  
@@ -574,6 +540,35 @@ Join Oxy Neuro
 </a>  
 </div>  
 </section>  <footer id="contact">  
-© 2026 Oxy Neuro™ | All Rights Reserved  
+© 2026 Oxy Neuro™ | All Rights Reserved 
+  <script>
+const card = document.getElementById("tilt-card");
+
+if(card && window.innerWidth > 900){
+
+card.addEventListener("mousemove",(e)=>{
+const rect = card.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+const cx = rect.width / 2;
+const cy = rect.height / 2;
+
+const rx = (cy - y) / 35;
+const ry = (x - cx) / 35;
+
+card.style.transform =
+`rotateX(${rx}deg) rotateY(${ry}deg)`;
+});
+
+card.addEventListener("mouseleave",()=>{
+card.style.transform="rotateX(0deg) rotateY(0deg)";
+});
+
+}
+</script>
+</body>
+</html>
 </footer>  </body>  
 </html>
