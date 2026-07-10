@@ -485,3 +485,53 @@ font-size:30px;
 }
 
 }
+@media (min-width: 992px) {
+    .ai-card{
+        display: block;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .ai-left{
+        max-width: 100%;
+        text-align: center;
+    }
+}
+/* Desktop Layout */
+@media (min-width: 992px) {
+
+    .ai-container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 40px;
+    }
+
+    .ai-card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+    }
+
+    .ai-left{
+        flex: 1;
+        max-width: 520px;
+    }
+
+    .ai-right{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ai-right img{
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+    }
+
+    .feature-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
