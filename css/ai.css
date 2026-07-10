@@ -764,3 +764,48 @@ a,
     font-size:24px;
     cursor:pointer;
 }
+
+/* ===== Mobile Sidebar ===== */
+@media (max-width:768px){
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:260px;
+    height:100vh;
+    z-index:1000;
+    transform:translateX(-100%);
+    transition:transform .35s ease;
+}
+
+.sidebar.show{
+    transform:translateX(0);
+}
+
+.main{
+    width:100%;
+    margin-left:0;
+}
+
+.right-panel{
+    display:none;
+}
+
+/* Dark background when sidebar is open */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    z-index:999;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+}
