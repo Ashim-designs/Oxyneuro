@@ -730,3 +730,37 @@ a,
 .ai-icon{
     animation:glow 3s infinite ease-in-out;
   }
+/* Sidebar */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:260px;
+    height:100vh;
+    transition:0.35s ease;
+    z-index:1000;
+}
+
+/* Hide sidebar */
+.sidebar.hide{
+    transform:translateX(-100%);
+}
+
+/* Main content */
+.main-content{
+    margin-left:260px;
+    transition:0.35s ease;
+}
+
+.main-content.full{
+    margin-left:0;
+}
+
+/* Menu button */
+.menu-btn{
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+}
