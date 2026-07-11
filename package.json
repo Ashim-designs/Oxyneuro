@@ -1,0 +1,24 @@
+{
+  "name": "oxyneuro",
+  "version": "1.0.0",
+  "description": "OxyNeuro - AI, Coding & Learning Platform",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "keywords": [
+    "oxyneuro",
+    "ai",
+    "gemini",
+    "coding",
+    "education",
+    "javascript",
+    "vercel"
+  ],
+  "author": "Ashim",
+  "license": "MIT"
+}
