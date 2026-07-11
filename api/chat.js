@@ -31,14 +31,12 @@ User: ${message}`,
 
     const data = await response.json();
 
-    res.status(200).json({
-      reply:
-        data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "Sorry, I couldn't generate a response.",
-    });
-  } catch (err) {
-    res.status(500).json({
-      error: err.message,
-    });
+if (!response.ok) {
+  return res.status(response.status).json(data);
+}
+
+res.status(200).json({
+  reply: data.candidates[0].content.parts[0].text
+});
   }
       }
