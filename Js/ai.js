@@ -1,21 +1,24 @@
 /* ==========================================
    OxyNeuro AI
-   JavaScript - Part 1
+   JavaScript
 ========================================== */
 
 const input = document.getElementById("prompt");
 const send = document.getElementById("send");
 const messages = document.getElementById("messages");
 
+// Send Message
 async function sendMessage() {
 
     const text = input.value.trim();
 
     if (!text) return;
 
+    // Hide welcome screen
     const welcome = document.querySelector(".welcome");
     if (welcome) welcome.style.display = "none";
 
+    // User message
     messages.innerHTML += `
         <div class="message">
             <div class="avatar">😊</div>
@@ -50,7 +53,8 @@ async function sendMessage() {
 
         const data = await response.json();
 
-        document.getElementById("typing").remove();
+        const typing = document.getElementById("typing");
+        if (typing) typing.remove();
 
         messages.innerHTML += `
             <div class="message">
@@ -61,7 +65,8 @@ async function sendMessage() {
 
     } catch (error) {
 
-        document.getElementById("typing").remove();
+        const typing = document.getElementById("typing");
+        if (typing) typing.remove();
 
         messages.innerHTML += `
             <div class="message">
@@ -73,51 +78,31 @@ async function sendMessage() {
         `;
 
         console.error(error);
-
     }
 
     messages.scrollTop = messages.scrollHeight;
-
 }
 
-// Send a message
-function sendMessage() {
-
-    const text = input.value.trim();
-
-    if (!text) return;
-
-    // Remove welcome screen on first message
-    const welcome = document.querySelector(".welcome");
-    if (welcome) {
-        welcome.style.display = "none";
-    }
-
-    
 // Send button
-send.addEventListener("click", sendMessage);
+if (send) {
+    send.addEventListener("click", sendMessage);
+}
 
 // Enter key
-input.addEventListener("keydown", function(e){
+if (input) {
+    input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+}
 
-    if(e.key === "Enter"){
-
-        e.preventDefault();
-
-        sendMessage();
-
-    }
-
-});
-
+// Sidebar
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.getElementById("overlay");
 
-    messages.scrollTop = messages.scrollHeight;
-
-           }
-   
 if (menuBtn && sidebar && overlay) {
 
     menuBtn.addEventListener("click", () => {
