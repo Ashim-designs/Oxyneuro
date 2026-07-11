@@ -31,12 +31,20 @@ User: ${message}`,
 
     const data = await response.json();
 
-if (!response.ok) {
-  return res.status(response.status).json(data);
-}
+    if (!response.ok) {
+      return res.status(response.status).json(data);
+    }
 
-res.status(200).json({
-  reply: data.candidates[0].content.parts[0].text
-});
+    return res.status(200).json({
+      reply: data.candidates[0].content.parts[0].text,
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      error: "Internal Server Error",
+      details: error.message,
+    });
   }
-      }
+}
